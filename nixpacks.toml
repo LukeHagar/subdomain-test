@@ -1,5 +1,0 @@
-[phases.setup]
-nixPkgs = ["nodejs_24", "pnpm"]
-
-[variables]
-NODE_VERSION = "24"
