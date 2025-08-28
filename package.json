@@ -36,5 +36,6 @@
 	},
 	"dependencies": {
 		"parse-domain": "^8.2.2"
-	}
+	},
+	"packageManager": "pnpm@latest"
 }
