@@ -36,5 +36,8 @@
 	},
 	"dependencies": {
 		"parse-domain": "^8.2.2"
+	},
+	"engines": {
+		"node": ">=20.0.0"
 	}
 }
