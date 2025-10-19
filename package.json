@@ -4,14 +4,15 @@
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
-		"prepare": "svelte-kit sync || echo ''",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"format": "prettier --write .",
-		"lint": "prettier --check ."
+		"dev": "bun run vite dev",
+		"build": "bun run vite build",
+		"preview": "bun run vite preview",
+		"prepare": "bun run svelte-kit sync || echo ''",
+		"check": "bun run svelte-kit sync && bun run svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "bun run svelte-kit sync && bun run svelte-check --tsconfig ./tsconfig.json --watch",
+		"format": "bun run prettier --write .",
+		"lint": "bun run prettier --check .",
+		"start": "node build/index.js"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^6.1.0",
@@ -30,8 +31,8 @@
 		"typescript": "^5.9.2",
 		"vite": "^7.1.3"
 	},
-	"pnpm": {
-		"onlyBuiltDependencies": [
+	"bun": {
+		"trustedDependencies": [
 			"@tailwindcss/oxide",
 			"esbuild"
 		]
