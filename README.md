@@ -1,28 +1,21 @@
-# sv
+# Subdomain Test
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A SvelteKit application powered by Bun and deployable via Railpack.
 
-## Creating a project
+## Prerequisites
 
-If you're seeing this, you've probably already done this step. Congrats!
+- [Bun](https://bun.sh/) (>=1.3.0)
 
-```sh
-# create a new project in the current directory
-npx sv create
+## Development
 
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Install dependencies and start the development server:
 
 ```sh
-npm run dev
+bun install
+bun run dev
 
 # or start the server and open the app in a new browser tab
-npm run dev -- --open
+bun run dev -- --open
 ```
 
 ## Building
@@ -30,9 +23,42 @@ npm run dev -- --open
 To create a production version of your app:
 
 ```sh
-npm run build
+bun run build
 ```
 
-You can preview the production build with `npm run preview`.
+You can preview the production build with `bun run preview`.
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## Deployment
+
+This project is configured for deployment via Railpack:
+
+1. **Railpack Configuration**: See `railpack.json` for deployment settings
+2. **Docker Support**: Use `Dockerfile.railpack` for containerized deployment
+3. **Bun Runtime**: Optimized for Bun's fast JavaScript runtime
+
+### Deploy with Railpack
+
+The project includes:
+- `railpack.json` - Railpack deployment configuration
+- `Dockerfile.railpack` - Optimized Dockerfile for Bun
+- `.railpackignore` - Files to exclude from deployment
+
+### Deploy with Docker
+
+```sh
+# Build the Docker image
+docker build -f Dockerfile.railpack -t subdomain-test .
+
+# Run the container
+docker run -p 3000:3000 subdomain-test
+```
+
+## Scripts
+
+- `bun run dev` - Start development server
+- `bun run build` - Build for production
+- `bun run preview` - Preview production build
+- `bun run start` - Start production server
+- `bun run check` - Run type checking
+- `bun run format` - Format code with Prettier
+- `bun run lint` - Lint code with Prettier
